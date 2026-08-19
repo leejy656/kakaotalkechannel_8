@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>지원누리알리미 | 정부지원정보 한눈에</title>
+<meta name="description" content="청년, 소상공인, 주거, 복지, 고용, 교육 등 정부지원정보를 카테고리별로 쉽고 빠르게 확인하세요.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%231B5FAE%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22>지</text></svg>">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="logo">
+      <span class="logo-mark">지</span>
+      <span class="logo-text">지원누리알리미</span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#programs">지원제도 찾기</a>
+      <a href="#categories">카테고리</a>
+      <a href="#guide">이용안내</a>
+      <a href="#faq">자주묻는질문</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="hero-eyebrow">대한민국 정부지원정보 안내 서비스</p>
+      <h1>흩어진 정부지원정보,<br><strong>지원누리알리미</strong>가 한 곳에 모았습니다</h1>
+      <p class="hero-desc">청년·소상공인·주거·복지·고용·교육 등 다양한 분야의 지원제도 정보를 쉬운 말로 정리해 알려드려요.</p>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="예: 청년 월세, 창업, 육아, 에너지바우처">
+        <button id="searchBtn" type="button">검색</button>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat"><strong id="statTotal">0</strong><span>등록된 지원제도</span></div>
+        <div class="stat"><strong>8</strong><span>지원 카테고리</span></div>
+        <div class="stat"><strong>매주</strong><span>정보 업데이트</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="notice-strip">
+    <div class="container">
+      <p>⚠️ 본 사이트는 정부지원정보를 이해하기 쉽게 정리해 제공하는 민간 정보 안내 서비스이며, 각 제도의 신청·심사·지급은 소관 기관에서 진행됩니다. 최신 공고문 및 세부 조건은 반드시 소관 기관을 통해 다시 확인해 주세요.</p>
+    </div>
+  </section>
+
+  <section class="categories" id="categories">
+    <div class="container">
+      <h2 class="section-title">카테고리별로 살펴보기</h2>
+      <p class="section-desc">관심 있는 분야를 선택하면 관련 지원제도만 모아볼 수 있어요.</p>
+      <div class="category-grid" id="categoryGrid"></div>
+    </div>
+  </section>
+
+  <section class="programs" id="programs">
+    <div class="container">
+      <div class="programs-head">
+        <h2 class="section-title">지원제도 목록</h2>
+        <p class="section-desc">현재 <strong id="resultCount">0</strong>건의 지원제도가 검색되었습니다.</p>
+      </div>
+
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-chip active" data-filter="all">전체</button>
+      </div>
+
+      <div class="program-grid" id="programGrid"></div>
+
+      <p class="empty-state" id="emptyState" hidden>조건에 맞는 지원제도를 찾지 못했어요. 다른 검색어나 카테고리를 시도해보세요.</p>
+    </div>
+  </section>
+
+  <section class="guide" id="guide">
+    <div class="container guide-inner">
+      <h2 class="section-title">이렇게 이용해보세요</h2>
+      <div class="guide-grid">
+        <div class="guide-card">
+          <span class="guide-num">1</span>
+          <h3>카테고리 선택</h3>
+          <p>청년, 소상공인, 주거 등 나에게 맞는 분야를 골라보세요.</p>
+        </div>
+        <div class="guide-card">
+          <span class="guide-num">2</span>
+          <h3>지원제도 확인</h3>
+          <p>지원 대상, 혜택 내용, 신청 시기를 쉬운 설명으로 확인하세요.</p>
+        </div>
+        <div class="guide-card">
+          <span class="guide-num">3</span>
+          <h3>관심 제도 저장</h3>
+          <p>별표를 눌러 관심 있는 제도를 나만의 목록에 저장해두세요.</p>
+        </div>
+        <div class="guide-card">
+          <span class="guide-num">4</span>
+          <h3>소관 기관 확인</h3>
+          <p>정확한 신청 방법과 자격 요건은 소관 기관 공고문으로 최종 확인하세요.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2 class="section-title">자주 묻는 질문</h2>
+      <div class="faq-list" id="faqList"></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta-inner">
+      <h2>내가 받을 수 있는 지원제도, 지금 확인해보세요</h2>
+      <p>지원누리알리미는 앞으로도 더 많은 정부지원정보를 쉽고 빠르게 정리해드릴게요.</p>
+      <a href="#programs" class="btn btn-primary">지원제도 보러가기</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark small">지</span>
+      <span class="logo-text">지원누리알리미</span>
+    </div>
+    <div class="footer-info">
+      <p>상호명 : 알리미</p>
+      <p>사업자등록번호 : 674-18-02352</p>
+      <p>대표자명 : 이재영</p>
+    </div>
+    <p class="footer-disclaimer">본 사이트에서 제공하는 정보는 참고용이며, 실제 지원 여부 및 조건은 각 소관 기관의 공식 공고를 따릅니다.</p>
+    <p class="footer-copy">&copy; <span id="year"></span> 지원누리알리미. All rights reserved.</p>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="맨 위로 이동">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
